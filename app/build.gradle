@@ -1,1 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
 
+android {
+    namespace 'com.zinmods.aimnoxz'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.zinmods.aimnoxz'
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    flavorDimensions "preset"
+
+    productFlavors {
+        p25 {
+            dimension "preset"
+            applicationIdSuffix ".p25"
+            resValue "string", "preset_name", "25%"
+        }
+
+        p56 {
+            dimension "preset"
+            applicationIdSuffix ".p56"
+            resValue "string", "preset_name", "56%"
+        }
+
+        p73 {
+            dimension "preset"
+            applicationIdSuffix ".p73"
+            resValue "string", "preset_name", "73%"
+        }
+
+        p98 {
+            dimension "preset"
+            applicationIdSuffix ".p98"
+            resValue "string", "preset_name", "98%"
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+
+        release {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+}
